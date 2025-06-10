@@ -37,6 +37,7 @@ class SendVenue:
         foursquare_type: str = "",
         disable_notification: bool = None,
         message_thread_id: int = None,
+        effect_id: int = None,
         reply_to_message_id: int = None,
         reply_to_chat_id: int = None,
         quote_text: str = None,
@@ -150,6 +151,7 @@ class SendVenue:
                 random_id=self.rnd_id(),
                 schedule_date=utils.datetime_to_timestamp(schedule_date),
                 noforwards=protect_content,
+                effect=effect_id,
                 reply_markup=await reply_markup.write(self) if reply_markup else None
             )
         )

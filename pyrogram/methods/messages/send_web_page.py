@@ -36,6 +36,7 @@ class SendWebPage:
         invert_media: bool = None,
         disable_notification: bool = None,
         message_thread_id: int = None,
+        effect_id: int = None,
         reply_to_message_id: int = None,
         reply_to_story_id: int = None,
         reply_to_chat_id: int = None,
@@ -154,7 +155,8 @@ class SendWebPage:
                 media=media,
                 invert_media=invert_media,
                 entities=entities,
-                noforwards=protect_content
+                noforwards=protect_content,
+                effect=effect_id,
             )
         )
 

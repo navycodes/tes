@@ -35,6 +35,7 @@ class SendMessage:
         disable_web_page_preview: bool = None,
         disable_notification: bool = None,
         message_thread_id: int = None,
+        effect_id: int = None,
         reply_to_message_id: int = None,
         reply_to_story_id: int = None,
         reply_to_chat_id: int = None,
@@ -169,7 +170,8 @@ class SendMessage:
                 reply_markup=await reply_markup.write(self) if reply_markup else None,
                 message=message,
                 entities=entities,
-                noforwards=protect_content
+                noforwards=protect_content,
+                effect=effect_id
             )
         )
 

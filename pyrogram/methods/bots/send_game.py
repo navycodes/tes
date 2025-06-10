@@ -31,6 +31,7 @@ class SendGame:
         game_short_name: str,
         disable_notification: bool = None,
         message_thread_id: int = None,
+        effect_id: int = None,
         reply_to_message_id: int = None,
         protect_content: bool = None,
         reply_markup: Union[
@@ -97,7 +98,8 @@ class SendGame:
                 reply_to=reply_to,
                 random_id=self.rnd_id(),
                 noforwards=protect_content,
-                reply_markup=await reply_markup.write(self) if reply_markup else None
+                reply_markup=await reply_markup.write(self) if reply_markup else None,
+                effect=effect_id
             )
         )
 
